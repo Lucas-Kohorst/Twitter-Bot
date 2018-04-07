@@ -1,6 +1,5 @@
 import tweepy
 from Tkinter import *
-from time import sleep
 
 consumer_key = 'consumer key'
 consumer_secret = 'consumer secrets'
@@ -99,8 +98,7 @@ def mainFunction():
                 username = tweet.user.screen_name
                 api.update_status("@" + username + " " + phrase, in_reply_to_status_id = tweetId)
                 print ("Replied with " + phrase)
-                sleep(1)
-
+                
             except tweepy.TweepError as e:
                 print(e.reason)
 
@@ -113,9 +111,7 @@ def mainFunction():
             try:
                 #Retweet
                 tweet.retweet()
-                print('Retweeted the tweet')
-
-                sleep(1)        
+                print('Retweeted the tweet')   
 
             except tweepy.TweepError as e:
                 print(e.reason)
@@ -128,9 +124,7 @@ def mainFunction():
             try:
                 #Favorite
                 tweet.favorite()
-                print('Favorited the tweet')
-
-                sleep(1)        
+                print('Favorited the tweet')   
 
             except tweepy.TweepError as e:
                 print(e.reason)
@@ -144,9 +138,7 @@ def mainFunction():
                 #Follow
                 tweet.user.follow()
                 print('Followed the user')
-
-                sleep(1)        
-
+                
             except tweepy.TweepError as e:
                 print(e.reason)
 
